@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+@theme {
+  /* ALERTS */
+
+  /* Success */
+  --color-gossip-300: #a9e76f;
+  /* Error */
+  --color-bittersweet-400: #f07d71;
+  /* Warning */
+  --color-festival-300: #ffe245;
+  /* Info */
+  --color-seagull-300: #78c8eb;
+
+  /* THEME COLORS */
+
+  --color-background: #311c36; /* Darkest Purple */
+  --color-foreground: #f0f2f5; /* White */
+
+  --color-card: #141a1f;
+
+  --color-primary: #f5878a; /* Red */
+  --color-primary-light: #fbd0d0; /* Light Red */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #281f30;
+  --color-secondary-foreground: #fcbd75; /* Theme Yellow */
+
+  --color-rajah-200: #fdd9ab; /* Light Yellow */
+  --color-accent: #fcbd75; /* Theme Yellow */
+  --color-highland-400: #6a8b61; /* Theme Green */
+
+  --color-muted: #2d2537;
+  --color-muted-foreground: #ae9ab8;
+
+  --color-border: #5b3b63;
+
+  --radius: 0.75rem;
+
+  --color-highlight: #f5a623; /* Dark Yellow */
+  --color-surface: #231a29; /* Dark Purple */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px
+      color-mix(in srgb, var(--color-secondary-foreground) 50%, transparent);
+  }
+
+  .glow-border {
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes slow-drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, -30px);
+    }
+    50% {
+      transform: translate(-15px, -20px);
+    }
+    75% {
+      transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes drift-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(
+      in srgb,
+      var(--color-primary-light) 15%,
+      transparent
+    );
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px
+      color-mix(in srgb, var(--color-primary-light) 20%, transparent);
+  }
+
+  .inline-span-typewriter-parent {
+    display: inline-flex;
+  }
+
+  .inline-span-typewriter-child {
+    position: relative;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid;
+    animation:
+      typing 9s steps(5, jump-none) infinite,
+      blink 1s step-end infinite;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+
+    22.22% {
+      width: 100%;
+    }
+
+    55.56% {
+      width: 100%;
+    }
+
+    88.89% {
+      width: 0;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+}
