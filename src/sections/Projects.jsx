@@ -14,7 +14,7 @@ const projects = [
   {
     title: "The Portfolio Itself",
     description:
-      "Single page application made to showcase my programming projects. The website shows my interest in creating CSS animations and was an opportunity to practice my React.js skills. It also gave me a space to learn Tailwind CSS.",
+      "Single page, responsive application made to showcase my programming projects. The website shows my interest in creating CSS animations and was an opportunity to practice my React.js skills. It also gave me a space to learn Tailwind CSS.",
     image: "/projects/project-dev-portfolio.jpg",
     tags: ["React.js", "Vite", "Tailwind", "CSS animations"],
     link: "#",
@@ -133,7 +133,7 @@ export const Projects = () => {
                   {project.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-sm font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                      className="px-4 py-1.5 rounded-full bg-surface text-sm font-medium border border-border/50 text-muted-foreground hover:border-accent/50 hover:text-accent transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -143,14 +143,6 @@ export const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* View All CTA */}
-        {/* <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
-        </div> */}
       </div>
     </section>
   );
