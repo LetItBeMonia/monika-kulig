@@ -4,46 +4,44 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton.jsx";
 
 const projects = [
   {
-    title: "Fintech Dashboard",
-    description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
+    title: "Coming soon...",
+    description: "Next.js + Typescript project.",
+    image: "/projects/project-next-project.jpg",
+    tags: ["Next.js", "TypeScript"],
     link: "#",
     github: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "The Portfolio Itself",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+      "Single page application made to showcase my programming projects. The website shows my interest in creating CSS animations and was an opportunity to practice my React.js skills. It also gave me a space to learn Tailwind CSS.",
+    image: "/projects/project-dev-portfolio.jpg",
+    tags: ["React.js", "Vite", "Tailwind", "CSS animations"],
     link: "#",
-    github: "#",
+    github: "https://github.com/LetItBeMonia/monika-kulig",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Companies Web Catalog",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
+      "Full-stack web application for browsing and managing a catalog of companies, featuring user registration and authentication, search functionality, filtering, sorting, pagination and file uploads. The project demonstrates the use of MVC architecture, session management, REST API implementation, middleware, routing, dynamic templates, server creation and non-relational database integration.",
+    image: "/projects/project-company-catalog.jpg",
+    tags: [
+      "JavaScript",
+      "NodeJS",
+      "express.js",
+      "mongoDB",
+      "mongoose",
+      "ejsLayouts",
+      "REST API",
+    ],
     link: "#",
-    github: "#",
-  },
-  {
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
+    github: "https://github.com/LetItBeMonia/CompaniesWebCatalog",
   },
 ];
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-64 relative overflow-hidden">
+    <section id="projects" className="py-32 relative overflow-hidden">
       {/* Bg Glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -51,60 +49,72 @@ export const Projects = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Featured Work
+            My projects
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Coming
+            More coming
             <span className="font-serif italic font-normal text-white">
               {" "}
               soon...
             </span>
           </h2>
+          <p>A selection of my work showing my programming skills.</p>
           {/* <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my work, showing my programming skills. From simple
+            A selection of my work showing my programming skills. From simple
             single-page websites to complex web applications.
           </p> */}
         </div>
 
         {/* Projects Grid */}
-        {/* <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 h-full flex flex-col"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-            > */}
-        {/* Image */}
-        {/* <div className="relative overflow-hidden aspect-video">
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                {/*  via-accent/50 */}
                 <div
                   className="absolute inset-0 
-                bg-linear-to-t from-card via-card/50
+                bg-linear-to-t from-accent/20 via-accent/10 
                  to-transparent opacity-60"
-                /> */}
-        {/* Overlay links */}
-        {/* <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition"
-                  >
-                    <FiGithub className="w-5 h-5" />
-                  </a>
+                />
+                {/* Overlay links */}
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 duration-300">
+                  {project.link != "#" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition"
+                    >
+                      <ArrowUpRight className="w-5 h-5" />
+                    </a>
+                  ) : (
+                    ""
+                  )}
+                  {project.github != "#" ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition"
+                    >
+                      <FiGithub className="w-5 h-5" />
+                    </a>
+                  ) : (
+                    ""
+                  )}
                 </div>
-              </div> */}
+              </div>
 
-        {/* Content */}
-        {/* <div className="p-6 space-y-4">
+              {/* Content */}
+              <div className="flex flex-col flex-1 p-6 gap-4">
                 <div className="flex items-start justify-between">
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                     {project.title}
@@ -119,7 +129,7 @@ export const Projects = () => {
                 <p className="text-muted-foreground text-sm">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
@@ -132,7 +142,7 @@ export const Projects = () => {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
 
         {/* View All CTA */}
         {/* <div className="text-center mt-12 animate-fade-in animation-delay-500">

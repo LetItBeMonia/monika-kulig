@@ -1,3 +1,5 @@
+// Ostatnio zmieniałam pt i pb w divie "content"
+
 import { Button } from "@/components/Button.jsx";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
@@ -33,13 +35,14 @@ export const Hero = () => {
       </div>
 
       {/* Bg Dots - Small */}
-      <BgDots size={1} numberOfDots={200} duration={70} />
+      <BgDots size={1} numberOfDots={250} duration={70} />
       {/* Bg Dots - Medium */}
-      <BgDots size={3} numberOfDots={80} duration={140} />
+      <BgDots size={3} numberOfDots={100} duration={140} />
       {/* Bg Dots - Large */}
-      <BgDots size={6} numberOfDots={30} duration={210} />
+      <BgDots size={6} numberOfDots={40} duration={210} />
 
       {/* Content */}
+      {/* <div className="container mx-auto px-6 pt-20 min-[1550px]:pt-32 pb-32 min-[1550px]:pb-20 relative z-10"> */}
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto min-[1700px]:max-w-none justify-center">
           {/* Left Column - Text Content */}
@@ -114,6 +117,7 @@ export const Hero = () => {
           {/* Right Column - Profile Image */}
           <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
+            {/* <div className="relative max-w-sm min-[1550px]:max-w-md mx-auto"> */}
             <div className="relative max-w-sm lg:max-w-md mx-auto">
               <div
                 className="absolute inset-0 
